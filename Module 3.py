@@ -1,43 +1,39 @@
 #Nick Kintigh
 #April 6th 2026
-# Assignment: Module 3 Lab - Case Study: Lists, Functions, and Classes
+#Module 3 Lab
 
-# Vehicle superclass
+#superclass
 class Vehicle:
     def __init__(self, vehicle_type):
         self.vehicle_type = vehicle_type
 
-# Automobile inherits from Vehicle
+#automobile class, inherits from vehicle
 class Automobile(Vehicle):
     def __init__(self, vehicle_type, year, make, model, doors, roof):
-        super().__init__(vehicle_type)
+        Vehicle.__init__(self, vehicle_type)
         self.year = year
         self.make = make
         self.model = model
         self.doors = doors
         self.roof = roof
 
-    # prints out the car info
     def display_info(self):
-        print("\nHere is your car:")
-        print(f"Vehicle type: {self.vehicle_type}")
-        print(f"Year: {self.year}")
-        print(f"Make: {self.make}")
-        print(f"Model: {self.model}")
-        print(f"Number of doors: {self.doors}")
-        print(f"Type of roof: {self.roof}")
+        print("Here is your car:")
+        print("Vehicle type: " + self.vehicle_type)
+        print("Year: " + self.year)
+        print("Make: " + self.make)
+        print("Model: " + self.model)
+        print("Doors: " + self.doors)
+        print("Roof: " + self.roof)
 
-# stores car as the vehicle type
 vehicle_type = "car"
 
-# asks the user for their car info
-print("Enter your car information below:")
+print("Enter your car info:")
 year = input("Year: ")
 make = input("Make: ")
 model = input("Model: ")
-doors = input("Number of doors (2 or 4): ")
-roof = input("Type of roof (solid or sun roof): ")
+doors = input("Doors (2 or 4): ")
+roof = input("Roof type (solid or sun roof): ")
 
-# creates the car object and displays it
 my_car = Automobile(vehicle_type, year, make, model, doors, roof)
 my_car.display_info()
